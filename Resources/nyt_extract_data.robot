@@ -18,7 +18,6 @@ Documentation       Automate the process of extracting data from the news site N
 ...                 Follow the steps 4-6 for all news that fall within the required time period
 
 Library             RPA.Browser.Selenium    auto_close=${FALSE}
-Library             RPA.Windows
 Library             RPA.Excel.Files
 Library             RPA.Desktop
 Library             Collections
@@ -27,7 +26,6 @@ Library             RPA.Tables
 Library             String
 Library             Process
 Library             DateTime
-#Library    ./nyt_news.py
 Variables           ../Locators/nyt_locators.py
 Variables           ../Configuration/nyt_extract_data.yaml
 
@@ -50,9 +48,9 @@ Extract latest news from NY Times and save them in a Excel file
     ${endDate}=    Get End Date Formatted
     Open The NY Times site    ${query}    ${startDate}    ${endDate}
     Select section
-    Set Wait Time    2
+    Sleep    2
     Load all available news
-    Set Wait Time    2
+    Sleep    2
     ${all_news_list}=    Scrap all news
     Save images and store name    ${all_news_list}
     Analize news data and store results    ${all_news_list}
@@ -91,7 +89,7 @@ Load all available news
     ${element_present}=    Run Keyword And Return Status    Element Should Be Visible    ${showMoreButton}
     WHILE    ${element_present}
         Run Keyword And Ignore Error    Click Element    ${showMoreButton}
-        Set Wait Time    0.2
+        Sleep    0.2
         ${element_present}=    Run Keyword And Return Status    Element Should Be Visible    ${showMoreButton}
     END
 

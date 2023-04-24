@@ -1,0 +1,8 @@
+browser:  chrome
+number_of_months: 1
+query:  Elon Musk
+section:  Business
+url:  https://www.nytimes.com/search?query={query}&startDate={startDate}&endDate={endDate}&sort=newest
+excel_file: NYTExports.xlsx
+image_folder: images
+sheet_name: News

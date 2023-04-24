@@ -1,6 +1,6 @@
 browser:  chrome
 number_of_months: 1
-query:  Elon Musk
+query:  Elon Musk Tesla
 section:  Business
 url:  https://www.nytimes.com/search?query={query}&startDate={startDate}&endDate={endDate}&sort=newest
 excel_file: NYTExports.xlsx

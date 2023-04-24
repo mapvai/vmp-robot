@@ -52,6 +52,7 @@ Extract latest news from NY Times and save them in a Excel file
     Load all available news
     Sleep    2
     ${all_news_list}=    Scrap all news
+    Close Browser
     Save images and store name    ${all_news_list}
     Analize news data and store results    ${all_news_list}
     Export all news as a Excel    ${all_news_list}
